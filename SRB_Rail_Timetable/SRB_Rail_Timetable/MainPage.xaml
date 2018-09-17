@@ -2,13 +2,46 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:SRB_Rail_Timetable"
-             x:Class="SRB_Rail_Timetable.MainPage">
+             x:Class="SRB_Rail_Timetable.MainPage"
+             Title="SRB Rail Timetable">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-    	<Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+    <StackLayout BackgroundColor="DeepSkyBlue">
+        <TableView HasUnevenRows="True">
+            <TableSection>
+                <EntryCell Text="From:"/>
+                <EntryCell Text="To:"/>
+
+                <ViewCell >
+                    <StackLayout Orientation="Horizontal"
+                             HorizontalOptions="FillAndExpand"
+                             Padding="20,6,20,6">
+
+                        <Image Source="calendar.png"/>
+                        <DatePicker HorizontalOptions="CenterAndExpand"/>
+
+                    </StackLayout>
+                </ViewCell>
+
+                <ViewCell >
+                    <StackLayout Orientation="Horizontal"
+                             HorizontalOptions="FillAndExpand"
+                             Padding="20,6,20,6">
+
+                        <Image Source="clock.png"/>
+                        <TimePicker HorizontalOptions="CenterAndExpand"/>
+
+                    </StackLayout>
+                </ViewCell>
+
+            </TableSection>
+        </TableView>
+
+        <Button Text="Seach"
+                BackgroundColor="Blue"
+                TextColor="White"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand"/>
+
     </StackLayout>
 
 </ContentPage>

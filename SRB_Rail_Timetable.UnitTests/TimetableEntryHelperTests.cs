@@ -161,11 +161,34 @@ namespace SRB_Rail_Timetable.UnitTests
             Assert.ThrowsException<ArgumentException>(() => TimetableEntryHelper.GetTarrifes(list));
         }
 
-        // TODO: one item
 
-        // TODO: some items
+        [TestMethod]
+        public void GetTarrifes_OneItem()
+        {
+            // Arrange
+            var list = new List<string> { "First class" };
+            var expected = Tarrifes.FirstClass;
 
-        // TODO: all items
+            // Act
+            var result = TimetableEntryHelper.GetTarrifes(list);
+
+            // Assert
+            Assert.AreEqual(expected, result);
+        }
+
+        [TestMethod]
+        public void GetTarrifes_MoreItems()
+        {
+            // Arrange
+            var list = new List<string> { "First class", "Second class", "Bicikla" };
+            var expected = Tarrifes.FirstClass | Tarrifes.SecondClass | Tarrifes.Bicycle;
+
+            // Act
+            var result = TimetableEntryHelper.GetTarrifes(list);
+
+            // Assert
+            Assert.AreEqual(expected, result);
+        }
 
         #endregion
     }

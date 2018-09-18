@@ -3,12 +3,12 @@
 namespace SRB_Rail_Timetable.Models
 {
     [Flags]
-    public enum Tarrife
+    public enum Tarrifes
     {
-        FirstClass = 0x0,
-        SecondClass = 0x1,
-        Coushete = 0x2,
-        ObligatoryReservation = 0x4,
-        Bicycle = 0x8
+        FirstClass = 1,
+        SecondClass = 2,
+        Coushete = 4,
+        ObligatoryReservation = 8,
+        Bicycle = 16
     }
 }

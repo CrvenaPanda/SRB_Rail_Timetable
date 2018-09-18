@@ -26,7 +26,7 @@ namespace SRB_Rail_Timetable.Models
 
         public TrainType Type { get; private set; }
 
-        public Tarrife Tarrifes { get; private set; }
+        public Tarrifes Tarrifes { get; private set; }
 
         public string Note { get; private set; }
 

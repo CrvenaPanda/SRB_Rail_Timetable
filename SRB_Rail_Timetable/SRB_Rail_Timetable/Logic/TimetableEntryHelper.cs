@@ -134,7 +134,7 @@ namespace SRB_Rail_Timetable.Logic
         /// <summary>
         /// Gets tarrifes from list of strings. (Must be atlest one!)
         /// </summary>
-        public static Tarrife GetTarrifes(List<string> list)
+        public static Tarrifes GetTarrifes(List<string> list)
         {
             // TODO: Make sure you have all possible tarrifes
 
@@ -161,17 +161,17 @@ namespace SRB_Rail_Timetable.Logic
         /// <summary>
         /// Converts string to tarrife.
         /// </summary>
-        static Tarrife ConvertStringToTarrife(string value)
+        static Tarrifes ConvertStringToTarrife(string value)
         {
             // TODO: Make sure you have all possible tarrifes
 
             switch (value)
             {
-                case tarr_BicycleString: return Tarrife.Bicycle;
-                case tarr_CousheteString: return Tarrife.Coushete;
-                case tarr_FirstClassString: return Tarrife.FirstClass;
-                case tarr_ObligatoryReservationString: return Tarrife.ObligatoryReservation;
-                case tarr_SecondClassString: return Tarrife.SecondClass;
+                case tarr_BicycleString: return Tarrifes.Bicycle;
+                case tarr_CousheteString: return Tarrifes.Coushete;
+                case tarr_FirstClassString: return Tarrifes.FirstClass;
+                case tarr_ObligatoryReservationString: return Tarrifes.ObligatoryReservation;
+                case tarr_SecondClassString: return Tarrifes.SecondClass;
                 default:
                     throw new ArgumentException("value must be one of predefined strings!");
             }

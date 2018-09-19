@@ -8,8 +8,10 @@
     <StackLayout BackgroundColor="DeepSkyBlue">
         <TableView HasUnevenRows="True">
             <TableSection>
-                <EntryCell Text="From:"/>
-                <EntryCell Text="To:"/>
+                <EntryCell Text="From:"
+                           x:Name="fromEntry"/>
+                <EntryCell Text="To:"
+                           x:Name="toEntry"/>
 
                 <ViewCell >
                     <StackLayout Orientation="Horizontal"
@@ -17,7 +19,8 @@
                              Padding="20,6,20,6">
 
                         <Image Source="calendar.png"/>
-                        <DatePicker HorizontalOptions="CenterAndExpand"/>
+                        <DatePicker HorizontalOptions="CenterAndExpand"
+                                    x:Name="datePicker"/>
 
                     </StackLayout>
                 </ViewCell>
@@ -28,7 +31,8 @@
                              Padding="20,6,20,6">
 
                         <Image Source="clock.png"/>
-                        <TimePicker HorizontalOptions="CenterAndExpand"/>
+                        <TimePicker HorizontalOptions="CenterAndExpand"
+                                    x:Name="timePicker"/>
 
                     </StackLayout>
                 </ViewCell>
@@ -37,6 +41,7 @@
         </TableView>
 
         <Button Text="Seach"
+                Clicked="Search_Clicked"
                 BackgroundColor="Blue"
                 TextColor="White"
                 HorizontalOptions="CenterAndExpand"

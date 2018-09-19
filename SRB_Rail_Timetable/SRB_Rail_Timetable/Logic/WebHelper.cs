@@ -29,16 +29,19 @@ namespace SRB_Rail_Timetable.Logic
         /// <summary>
         /// Generate url to timetable based on starting and ending station, and time.
         /// </summary>
-        public static string GenerateTimetableUrl(Station start, Station end, DateTime dateTime)
+        public static string GenerateTimetableUrl(
+            string startName, string startId,
+            string endName, string endId,
+            DateTime dateTime)
         {
-            var startName = start.Name.Replace(" ", "%20");
-            var endName = end.Name.Replace(" ", "%20");
+            startName = startName.Replace(" ", "%20");
+            endName = endName.Replace(" ", "%20");
 
             return String.Format("w3.srbrail.rs/ZSRedVoznje/direktni/{0}/{1}/{2}/{3}/{4}/{5}/en",
                 startName,
-                start.Id,
+                startId,
                 endName,
-                end.Id,
+                endId,
                 dateTime.ToString("dd.MM.yyyy"),
                 dateTime.ToString("HHmm"));
         }

@@ -1,8 +1,0 @@
-﻿<Application
-    x:Class="SRB_Rail_Timetable.UWP.App"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:SRB_Rail_Timetable.UWP"
-    RequestedTheme="Light">
-
-</Application>

@@ -5,12 +5,12 @@
              x:Class="SRB_Rail_Timetable.MainPage"
              Title="SRB Rail Timetable">
 
-    <StackLayout BackgroundColor="DeepSkyBlue">
+    <StackLayout BackgroundColor="{StaticResource backgroundColor}">
         <TableView HasUnevenRows="True">
             <TableSection>
-                <EntryCell Text="From:"
+                <EntryCell Label="From:"
                            x:Name="fromEntry"/>
-                <EntryCell Text="To:"
+                <EntryCell Label="To:"
                            x:Name="toEntry"/>
 
                 <ViewCell >

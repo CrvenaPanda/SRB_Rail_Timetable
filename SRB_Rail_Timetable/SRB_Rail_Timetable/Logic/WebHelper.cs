@@ -49,7 +49,7 @@ namespace SRB_Rail_Timetable.Logic
         /// <summary>
         /// Get timetable from web page. Timetable is empty if there is no possible routes.
         /// </summary>
-        static List<TimetableEntry> ScrapTrainsTimetable(string pageURL)
+        public static List<TimetableEntry> ScrapTrainsTimetable(string pageURL)
         {
             var className = "tabela";
             var timetable = new List<TimetableEntry>();

@@ -3,6 +3,7 @@ using SRB_Rail_Timetable.Models;
 using SRB_Rail_Timetable.Views;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,20 +21,13 @@ namespace SRB_Rail_Timetable
         void Search_Clicked(object sender, EventArgs e)
         {
             // Get URL
-            //var URL = GenerateURL();
+            var URL = GenerateURL();
 
-            // Get timetable TODO:
-            //var timetable = WebHelper.ScrapTrainsTimetable(URL);
+            // Get timetable
+            var timetable = WebHelper.ScrapTrainsTimetable(URL, datePicker.Date);
 
-            var test = new List<TimetableEntry>() // TODO: Remove me
-            {
-                new TimetableEntry("123", DateTime.Now.Date, "5:25", "7:00", "", "1:35", "FAST TRAIN", new List<string>(){ "First class"}, ""),
-                new TimetableEntry("123", DateTime.Now.Date, "10:25", "12:00", "", "1:35", "FAST TRAIN", new List<string>(){ "First class"}, ""),
-                new TimetableEntry("123", DateTime.Now.Date, "15:25", "17:00", "", "1:35", "FAST TRAIN", new List<string>(){ "First class"}, "")
-            };
-
-            // TODO: Create timetable page
-            Navigation.PushAsync(new TimetablePage($"{fromEntry.Text} - {toEntry.Text}" , test));
+            // Create timetable page
+            Navigation.PushAsync(new TimetablePage($"{fromEntry.Text} - {toEntry.Text}" , timetable));
         }
 
         /// <summary>

@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<page:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:page="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             x:Class="SRB_Rail_Timetable.Views.EntryPopupPage">
+
+    <page:PopupPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="Medium"/>
+            </Style>
+        </ResourceDictionary>
+    </page:PopupPage.Resources>
+
+    <StackLayout Padding="30">
+        <ScrollView BackgroundColor="White"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand">
+            <StackLayout Padding="0,10,0,0">
+
+                <!-- Destination and Date -->
+                
+                <Label x:Name="titleLabel"
+                       TextColor="Black"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="Start"
+                       FontSize="Large"/>
+
+                <Label x:Name="dateLabel"
+                       HorizontalOptions="CenterAndExpand"/>
+
+                <BoxView Color="Gray"
+                         HeightRequest="1"/>
+
+                <!-- Train Type and Number-->
+                
+                <Label x:Name="trainLabel"
+                       HorizontalOptions="CenterAndExpand"
+                       FontSize="Medium"
+                       TextColor="Black"/>
+
+                <BoxView Color="Gray"
+                         HeightRequest="1"/>
+
+                <!-- Time, Late Time, Travel Time-->
+                
+                <StackLayout Padding="80,0,0,30">
+
+                    <Label x:Name="timeLabel"
+                           HorizontalOptions="StartAndExpand"
+                           FontSize="Medium"
+                           TextColor="Black"/>
+
+                    <Label x:Name="lateLabel"
+                           HorizontalOptions="StartAndExpand"
+                           FontSize="Medium"
+                           TextColor="Black"/>
+
+                    <Label x:Name="travelLabel"
+                           HorizontalOptions="StartAndExpand"
+                           FontSize="Medium"
+                           TextColor="Black"/>
+                </StackLayout>
+
+                <!-- Tarrifes -->
+                
+                <Frame BorderColor="Gray"
+                       Padding="50,10,30,10"
+                       Margin="30,0,30,0">
+                    <StackLayout x:Name="tarrifesLayout">
+                    
+                    <Label Text="Tarrifes:"
+                           TextColor="Black"/>
+                    
+                </StackLayout>
+                </Frame>
+
+                <!-- Note -->
+                
+                <Label LineBreakMode="WordWrap"
+                       Margin="10,7,10,0"
+                       x:Name="noteLabel"
+                       TextColor="Red"/>
+
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+</page:PopupPage>

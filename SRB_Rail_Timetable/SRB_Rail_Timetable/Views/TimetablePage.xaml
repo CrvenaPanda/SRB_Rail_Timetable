@@ -45,7 +45,8 @@
             <BoxView HeightRequest="1"
                      Color="Gray"/>
 
-            <ListView x:Name="timetableListView">
+            <ListView x:Name="timetableListView"
+                      ItemSelected="timetableListView_ItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

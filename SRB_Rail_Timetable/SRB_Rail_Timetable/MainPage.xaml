@@ -9,9 +9,11 @@
         <TableView HasUnevenRows="True">
             <TableSection>
                 <EntryCell Label="From:"
-                           x:Name="fromEntry"/>
+                           x:Name="fromEntry"
+                           Text="NOVI SAD"/>
                 <EntryCell Label="To:"
-                           x:Name="toEntry"/>
+                           x:Name="toEntry"
+                           Text="STARA PAZOVA"/>
 
                 <ViewCell >
                     <StackLayout Orientation="Horizontal"

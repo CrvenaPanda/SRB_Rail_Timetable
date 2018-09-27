@@ -19,6 +19,9 @@ namespace SRB_Rail_Timetable.Droid
 
             base.OnCreate(bundle);
 
+            // Init popups
+            Rg.Plugins.Popup.Popup.Init(this, bundle);
+
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());
         }

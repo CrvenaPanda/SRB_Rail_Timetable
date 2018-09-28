@@ -12,7 +12,11 @@ namespace SRB_Rail_Timetable.Logic
     {
         #region Stations And IDs
 
-        public static Dictionary<string, string> StationsAndIds = new Dictionary<string, string>()
+        /// <summary>
+        /// Key - station name;
+        /// Value - station id
+        /// </summary>
+        public static Dictionary<string, string> StationsAndIds { get; private set; } = new Dictionary<string, string>()
         {
             { "ADRANI", "13001"  },
             { "ADROVAC", "12509"  },

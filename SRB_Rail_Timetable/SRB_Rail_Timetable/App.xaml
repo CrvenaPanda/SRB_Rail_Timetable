@@ -5,12 +5,16 @@
              x:Class="SRB_Rail_Timetable.App">
 	<Application.Resources>
         <ResourceDictionary>
+            <!-- Colors -->
             <Color x:Key="backgroundColor">DeepSkyBlue</Color>
             <Color x:Key="tableTitleColor">Gray</Color>
             <Color x:Key="tableItemTextColor">Black</Color>
             <Color x:Key="invalidTextColor">Red</Color>
 
+            <!-- Other -->
+            <x:String x:Key="stationPlaceholder">Click to choose...</x:String>
             <convert:TimespanToColorConverter x:Key="timespanToColor" />
+            
         </ResourceDictionary>
 	</Application.Resources>
 </Application>

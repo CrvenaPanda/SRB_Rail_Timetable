@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<page:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                xmlns:page="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+                x:Class="SRB_Rail_Timetable.Views.StationChooserPopupPage"
+                Padding="30">
+
+    <StackLayout BackgroundColor="White">
+
+        <Frame Padding="0">
+            <SearchBar TextChanged="SearchBar_TextChanged"
+                       Placeholder="Enter station..."/>
+        </Frame>
+
+        <ListView x:Name="listView"
+                  ItemSelected="listView_ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Label HorizontalOptions="CenterAndExpand"
+                               TextColor="{StaticResource tableItemTextColor}"
+                               Text="{Binding .}"
+                               VerticalOptions="CenterAndExpand"/>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </StackLayout>
+    
+</page:PopupPage>

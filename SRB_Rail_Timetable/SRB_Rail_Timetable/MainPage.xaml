@@ -8,35 +8,95 @@
     <StackLayout BackgroundColor="{StaticResource backgroundColor}">
         <TableView HasUnevenRows="True">
             <TableSection>
-                <EntryCell Label="From:"
-                           x:Name="fromEntry"
-                           Text="NOVI SAD"/>
-                <EntryCell Label="To:"
-                           x:Name="toEntry"
-                           Text="STARA PAZOVA"/>
 
-                <ViewCell >
-                    <StackLayout Orientation="Horizontal"
-                             HorizontalOptions="FillAndExpand"
-                             Padding="20,6,20,6">
+                <!-- From Cell -->
+                <ViewCell Tapped="FromEntry_Tapped">
+                    <Grid Padding="15,15,10,15">
 
-                        <Image Source="calendar.png"/>
-                        <DatePicker HorizontalOptions="CenterAndExpand"
-                                    x:Name="datePicker"/>
-
-                    </StackLayout>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width=".15*"/>
+                            <ColumnDefinition Width=".85*"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <Label Text="From:"
+                               FontSize="Medium"/>
+                        
+                        <Label Text="{StaticResource stationPlaceholder}"
+                               x:Name="fromLabel"
+                               FontSize="18"
+                               TextColor="Black"
+                               Grid.Column="1"/>
+                    </Grid>
                 </ViewCell>
 
+                <!-- Reverse Button -->
+                <ViewCell>
+                    <Button Text="↑↓"
+                            BackgroundColor="White"
+                            FontSize="Large"
+                            Clicked="ReverseButton_Clicked"/>
+                </ViewCell>
+                
+                <!-- To Cell -->
+                <ViewCell Tapped="ToEntry_Tapped">
+                    <Grid Padding="15,15,10,15">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width=".15*"/>
+                            <ColumnDefinition Width=".85*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Text="To:"
+                               FontSize="Medium"/>
+
+                        <Label Text="{StaticResource stationPlaceholder}"
+                               x:Name="toLabel"
+                               FontSize="18"
+                               TextColor="Black"
+                               Grid.Column="1"/>
+
+                    </Grid>
+                </ViewCell>
+
+                <!-- Date Cell -->
                 <ViewCell >
-                    <StackLayout Orientation="Horizontal"
-                             HorizontalOptions="FillAndExpand"
-                             Padding="20,6,20,6">
+                    <Grid Padding="15,0,10,0">
 
-                        <Image Source="clock.png"/>
-                        <TimePicker HorizontalOptions="CenterAndExpand"
-                                    x:Name="timePicker"/>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width=".15*"/>
+                            <ColumnDefinition Width=".85*"/>
+                        </Grid.ColumnDefinitions>
 
-                    </StackLayout>
+                        <Label Text="Date:"
+                               FontSize="Medium"
+                               VerticalOptions="CenterAndExpand"/>
+
+                        <DatePicker x:Name="datePicker"
+                                    Grid.Column="1"
+                                    HorizontalOptions="StartAndExpand"/>
+                    </Grid>
+                </ViewCell>
+
+                <!-- Time Cell -->
+                <ViewCell>
+
+                    <Grid Padding="15,4,10,4">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width=".15*"/>
+                            <ColumnDefinition Width=".85*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Text="Start Time:"
+                               FontSize="Medium"
+                               VerticalOptions="CenterAndExpand"/>
+
+                        <TimePicker x:Name="timePicker"
+                                    Time="5:00"
+                                    Grid.Column="1"
+                                    HorizontalOptions="StartAndExpand"/>
+                    </Grid>
+                    
                 </ViewCell>
 
             </TableSection>

@@ -2,11 +2,6 @@
 using Rg.Plugins.Popup.Services;
 using SRB_Rail_Timetable.Models;
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -16,7 +11,9 @@ namespace SRB_Rail_Timetable.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class EntryPopupPage : PopupPage
 	{
-		public EntryPopupPage (TimetableEntry entry, string destinationTitle)
+        #region Constructors
+
+        public EntryPopupPage (TimetableEntry entry, string destinationTitle)
 		{
             if (entry == null)
             {
@@ -29,19 +26,18 @@ namespace SRB_Rail_Timetable.Views
             // Set data
             titleLabel.Text = destinationTitle;
             SetEntryData(entry);
-            SetTarrifes(entry.Tarrifes);
+            AddTarrifesLabels(entry.Tarrifes);
             SetNote(entry.Note);
 		}
 
-        void SetNote(string note)
-        {
-            if (note.Length > 0)
-            {
-                noteLabel.Text = "* " + note;
-            }
-        }
+        #endregion
 
-        void SetTarrifes(Tarrifes tarrifes)
+        #region Data Methods
+
+        /// <summary>
+        /// Add tarrifes labels to page.
+        /// </summary>
+        void AddTarrifesLabels(Tarrifes tarrifes)
         {
             if (tarrifes.HasFlag(Tarrifes.FirstClass))
             {
@@ -65,16 +61,43 @@ namespace SRB_Rail_Timetable.Views
             }
         }
 
+        /// <summary>
+        /// Main method for setting data in view elements.
+        /// </summary>
         void SetEntryData(TimetableEntry entry)
         {
+            // Date
             dateLabel.Text = entry.Departure.ToString("d MMM, yyyy");
-            trainLabel.Text = GetTrainTypeAndNumber(entry);
+
+            // Type and Number
+            trainLabel.Text = ExtractTrainTypeAndNumber(entry);
+
+            // Time
             timeLabel.Text = "TIME:  " + entry.Departure.ToString("hh\\:mm - ") + entry.Arrival.ToString("hh\\:mm");
+
+            // Late
+            ChangeLateLabelColor(entry.Late);
             lateLabel.Text = "LATE:  " + entry.Late.ToString("hh\\:mm");
+
+            // Travel Time
             travelLabel.Text = "TRAVEL:  " + entry.TravelTime.ToString("hh\\:mm");
         }
 
-        string GetTrainTypeAndNumber(TimetableEntry trainEntry)
+        /// <summary>
+        /// Changes late label color if needed.
+        /// </summary>
+        void ChangeLateLabelColor(TimeSpan late)
+        {
+            if (late.TotalMinutes > 0)
+            {
+                lateLabel.TextColor = (Color)Application.Current.Resources["invalidTextColor"];
+            }
+        }
+
+        /// <summary>
+        /// Extracts string representation of train type and number.
+        /// </summary>
+        string ExtractTrainTypeAndNumber(TimetableEntry trainEntry)
         {
             string result;
             
@@ -93,10 +116,17 @@ namespace SRB_Rail_Timetable.Views
             return result;
         }
 
-        protected override bool OnBackButtonPressed()
+        /// <summary>
+        /// Set 'note' about entry if there is one.
+        /// </summary>
+        void SetNote(string note)
         {
-            PopupNavigation.Instance.PopAsync();
-            return true;
+            if (note.Length > 0)
+            {
+                noteLabel.Text = "* " + note;
+            }
         }
+
+        #endregion
     }
 }

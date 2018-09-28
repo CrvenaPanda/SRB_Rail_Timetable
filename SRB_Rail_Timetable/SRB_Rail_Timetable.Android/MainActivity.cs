@@ -25,6 +25,18 @@ namespace SRB_Rail_Timetable.Droid
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());
         }
+
+        public override void OnBackPressed()
+        {
+            // Make sure that if there are some popup pages
+            // to close them first when back button is pressed
+            if (Rg.Plugins.Popup.Popup.SendBackPressed(base.OnBackPressed))
+            {
+                return;
+            }
+
+            base.OnBackPressed();
+        }
     }
 }
 

@@ -1,12 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:convert="clr-namespace:SRB_Rail_Timetable.Converters"
              x:Class="SRB_Rail_Timetable.App">
 	<Application.Resources>
         <ResourceDictionary>
             <Color x:Key="backgroundColor">DeepSkyBlue</Color>
             <Color x:Key="tableTitleColor">Gray</Color>
             <Color x:Key="tableItemTextColor">Black</Color>
+            <Color x:Key="invalidTextColor">Red</Color>
+
+            <convert:TimespanToColorConverter x:Key="timespanToColor" />
         </ResourceDictionary>
 	</Application.Resources>
 </Application>

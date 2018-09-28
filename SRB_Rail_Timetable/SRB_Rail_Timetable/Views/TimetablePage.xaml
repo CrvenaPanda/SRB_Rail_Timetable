@@ -38,7 +38,7 @@
 
                 <Label Text="Late  "
                        Grid.Column="2"
-                       TextColor="{StaticResource tableTitleColor}"/> <!-- TODO: Make color red if late -->
+                       TextColor="{StaticResource tableTitleColor}"/>
 
             </Grid>
 
@@ -61,12 +61,16 @@
                                     <ColumnDefinition Width=".33*"/>
                                 </Grid.ColumnDefinitions>
 
+                                <!-- Departure -->
                                 <Label Text="{Binding Departure, StringFormat='{0:HH:mm}'}"/>
 
+                                <!-- Arrival -->
                                 <Label Text="{Binding Arrival, StringFormat='{0:HH:mm}'}"
                                        Grid.Column="1"/>
 
+                                <!-- Late -->
                                 <Label Text="{Binding Late, StringFormat='{0:hh\\:mm}'}"
+                                       TextColor="{Binding Late, Converter={StaticResource timespanToColor}}"
                                        Grid.Column="2"/>
 
                             </Grid>

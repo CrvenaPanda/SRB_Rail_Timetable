@@ -1,8 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <page:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:page="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
-             x:Class="SRB_Rail_Timetable.Views.EntryPopupPage">
+                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                xmlns:page="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+                x:Class="SRB_Rail_Timetable.Views.EntryPopupPage"
+                Padding="30">
 
     <page:PopupPage.Resources>
         <ResourceDictionary>
@@ -12,10 +13,11 @@
         </ResourceDictionary>
     </page:PopupPage.Resources>
 
-    <StackLayout Padding="30">
+    <StackLayout VerticalOptions="Start">
+        
         <ScrollView BackgroundColor="White"
-                    VerticalOptions="FillAndExpand"
-                    HorizontalOptions="FillAndExpand">
+                    HorizontalOptions="Fill"
+                    Padding="10">
             <StackLayout Padding="0,10,0,0">
 
                 <!-- Destination and Date -->
@@ -42,7 +44,7 @@
                 <BoxView Color="Gray"
                          HeightRequest="1"/>
 
-                <!-- Time, Late Time, Travel Time-->
+                <!-- Time, Late Time, Travel Time TODO: add style-->
                 
                 <StackLayout Padding="80,0,0,30">
 
@@ -80,7 +82,7 @@
                 <Label LineBreakMode="WordWrap"
                        Margin="10,7,10,0"
                        x:Name="noteLabel"
-                       TextColor="Red"/>
+                       TextColor="{StaticResource invalidTextColor}"/>
 
             </StackLayout>
         </ScrollView>

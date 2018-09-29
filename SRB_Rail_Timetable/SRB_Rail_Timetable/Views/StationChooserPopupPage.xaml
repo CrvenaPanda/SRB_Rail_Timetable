@@ -2,6 +2,7 @@
 <page:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                 xmlns:page="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+                xmlns:i18n="clr-namespace:SRB_Rail_Timetable.Logic"
                 x:Class="SRB_Rail_Timetable.Views.StationChooserPopupPage"
                 Padding="30">
 
@@ -9,7 +10,8 @@
 
         <Frame Padding="0">
             <SearchBar TextChanged="SearchBar_TextChanged"
-                       Placeholder="Enter station..."/>
+                       Placeholder="{i18n:Translate EnterStation}"
+                       x:Name="searchBar"/>
         </Frame>
 
         <ListView x:Name="listView"

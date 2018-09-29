@@ -1,10 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:i18n="clr-namespace:SRB_Rail_Timetable.Logic"
              xmlns:local="clr-namespace:SRB_Rail_Timetable"
              x:Class="SRB_Rail_Timetable.MainPage"
              Title="SRB Rail Timetable">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="ENG"
+                     Clicked="ChangeLanguage_Clicked"/>
+    </ContentPage.ToolbarItems>
+    
     <StackLayout BackgroundColor="{StaticResource backgroundColor}">
         <TableView HasUnevenRows="True">
             <TableSection>
@@ -14,14 +20,15 @@
                     <Grid Padding="15,15,10,15">
 
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width=".15*"/>
-                            <ColumnDefinition Width=".85*"/>
+                            <ColumnDefinition Width=".2*"/>
+                            <ColumnDefinition Width=".8*"/>
                         </Grid.ColumnDefinitions>
                         
-                        <Label Text="From:"
+                        <Label Text="{i18n:Translate From}"
+                               x:Name="fromLabelName"
                                FontSize="Medium"/>
-                        
-                        <Label Text="{StaticResource stationPlaceholder}"
+
+                        <Label Text="{i18n:Translate ClickTo}"
                                x:Name="fromLabel"
                                FontSize="18"
                                TextColor="Black"
@@ -42,14 +49,15 @@
                     <Grid Padding="15,15,10,15">
 
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width=".15*"/>
-                            <ColumnDefinition Width=".85*"/>
+                            <ColumnDefinition Width=".2*"/>
+                            <ColumnDefinition Width=".8*"/>
                         </Grid.ColumnDefinitions>
 
-                        <Label Text="To:"
+                        <Label Text="{i18n:Translate To}"
+                               x:Name="toLabelName"
                                FontSize="Medium"/>
 
-                        <Label Text="{StaticResource stationPlaceholder}"
+                        <Label Text="{i18n:Translate ClickTo}"
                                x:Name="toLabel"
                                FontSize="18"
                                TextColor="Black"
@@ -63,11 +71,12 @@
                     <Grid Padding="15,0,10,0">
 
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width=".15*"/>
-                            <ColumnDefinition Width=".85*"/>
+                            <ColumnDefinition Width=".2*"/>
+                            <ColumnDefinition Width=".8*"/>
                         </Grid.ColumnDefinitions>
 
-                        <Label Text="Date:"
+                        <Label Text="{i18n:Translate Date}"
+                               x:Name="dateLabel"
                                FontSize="Medium"
                                VerticalOptions="CenterAndExpand"/>
 
@@ -83,11 +92,12 @@
                     <Grid Padding="15,4,10,4">
 
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width=".15*"/>
-                            <ColumnDefinition Width=".85*"/>
+                            <ColumnDefinition Width=".2*"/>
+                            <ColumnDefinition Width=".8*"/>
                         </Grid.ColumnDefinitions>
 
-                        <Label Text="Start Time:"
+                        <Label Text="{i18n:Translate StartTime}"
+                               x:Name="timeLabel"
                                FontSize="Medium"
                                VerticalOptions="CenterAndExpand"/>
 
@@ -102,7 +112,8 @@
             </TableSection>
         </TableView>
 
-        <Button Text="Seach"
+        <Button Text="{i18n:Translate Search}"
+                x:Name="searchButton"
                 Clicked="Search_Clicked"
                 BackgroundColor="Blue"
                 TextColor="White"

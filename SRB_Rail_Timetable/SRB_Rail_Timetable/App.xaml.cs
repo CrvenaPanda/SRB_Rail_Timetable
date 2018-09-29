@@ -1,4 +1,7 @@
+using Plugin.Multilingual;
+using SRB_Rail_Timetable.Resources;
 using System;
+using System.Globalization;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -11,7 +14,7 @@ namespace SRB_Rail_Timetable
 		{
 			InitializeComponent();
 
-			MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new MainPage());
 		}
 
 		protected override void OnStart ()

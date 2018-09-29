@@ -1,5 +1,6 @@
 ﻿using Rg.Plugins.Popup.Pages;
 using Rg.Plugins.Popup.Services;
+using SRB_Rail_Timetable.Logic;
 using SRB_Rail_Timetable.Models;
 using System;
 
@@ -41,23 +42,28 @@ namespace SRB_Rail_Timetable.Views
         {
             if (tarrifes.HasFlag(Tarrifes.FirstClass))
             {
-                tarrifesLayout.Children.Add(new Label { Text = "FIRST CLASS" });
+                var text = new TranslateExtension { Text = "FirstClass" }.ProvideValue() as string;
+                tarrifesLayout.Children.Add(new Label { Text = text });
             }
             if (tarrifes.HasFlag(Tarrifes.SecondClass))
             {
-                tarrifesLayout.Children.Add(new Label { Text = "SECOND CLASS" });
+                var text = new TranslateExtension { Text = "SecondClass" }.ProvideValue() as string;
+                tarrifesLayout.Children.Add(new Label { Text = text });
             }
             if (tarrifes.HasFlag(Tarrifes.Coushete))
             {
-                tarrifesLayout.Children.Add(new Label { Text = "COUSHETE" });
+                var text = new TranslateExtension { Text = "Coushete" }.ProvideValue() as string;
+                tarrifesLayout.Children.Add(new Label { Text = text });
             }
             if (tarrifes.HasFlag(Tarrifes.ObligatoryReservation))
             {
-                tarrifesLayout.Children.Add(new Label { Text = "OBLIGATORY RESERVATION" });
+                var text = new TranslateExtension { Text = "ObligatoryReservation" }.ProvideValue() as string;
+                tarrifesLayout.Children.Add(new Label { Text = text });
             }
             if (tarrifes.HasFlag(Tarrifes.Bicycle))
             {
-                tarrifesLayout.Children.Add(new Label { Text = "BICYCLE" });
+                var text = new TranslateExtension { Text = "Bicycle" }.ProvideValue() as string;
+                tarrifesLayout.Children.Add(new Label { Text = text });
             }
         }
 
@@ -73,14 +79,17 @@ namespace SRB_Rail_Timetable.Views
             trainLabel.Text = ExtractTrainTypeAndNumber(entry);
 
             // Time
-            timeLabel.Text = "TIME:  " + entry.Departure.ToString("hh\\:mm - ") + entry.Arrival.ToString("hh\\:mm");
+            var timeStr = new TranslateExtension { Text = "Time" }.ProvideValue() as string;
+            timeLabel.Text = timeStr + " " + entry.Departure.ToString("hh\\:mm - ") + entry.Arrival.ToString("hh\\:mm");
 
             // Late
             ChangeLateLabelColor(entry.Late);
-            lateLabel.Text = "LATE:  " + entry.Late.ToString("hh\\:mm");
+            var lateStr = new TranslateExtension { Text = "LatePlus" }.ProvideValue() as string;
+            lateLabel.Text = lateStr + " " + entry.Late.ToString("hh\\:mm");
 
             // Travel Time
-            travelLabel.Text = "TRAVEL:  " + entry.TravelTime.ToString("hh\\:mm");
+            var travelStr = new TranslateExtension { Text = "Travels" }.ProvideValue() as string;
+            travelLabel.Text = travelStr + " " + entry.TravelTime.ToString("hh\\:mm");
         }
 
         /// <summary>
@@ -99,21 +108,21 @@ namespace SRB_Rail_Timetable.Views
         /// </summary>
         string ExtractTrainTypeAndNumber(TimetableEntry trainEntry)
         {
-            string result;
+            string stringId;
             
             // Set train type
             switch (trainEntry.Type)
             {
-                case TrainType.FastTrain: result = "FAST TRAIN"; break;
-                case TrainType.InterCity: result = "INTER CITY"; break;
-                case TrainType.RegioVoz: result = "REGIO VOZ"; break;
-                default: result = "LOCAL"; break;
+                case TrainType.FastTrain: stringId = "FastTrain"; break;
+                case TrainType.InterCity: stringId = "InterCity"; break;
+                case TrainType.RegioVoz: stringId = "RegioVoz"; break;
+                default: stringId = "LocalTrain"; break;
             }
 
             // Set train number
-            result += (" " + trainEntry.TrainNumber);
+            string type = new TranslateExtension { Text = stringId }.ProvideValue() as string;
 
-            return result;
+            return type + " " + trainEntry.TrainNumber;
         }
 
         /// <summary>

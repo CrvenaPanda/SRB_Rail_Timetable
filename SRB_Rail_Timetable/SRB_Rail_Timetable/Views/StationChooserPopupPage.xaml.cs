@@ -25,6 +25,15 @@ namespace SRB_Rail_Timetable.Views
             listView.ItemsSource = TimetableEntryHelper.StationsAndIds.Keys;
         }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            // Focus on search bar
+            searchBar.Focus();
+        }
+
+
         void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
         {
             // Reset if search box is empty

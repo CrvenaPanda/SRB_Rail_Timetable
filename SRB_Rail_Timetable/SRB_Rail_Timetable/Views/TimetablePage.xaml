@@ -46,6 +46,11 @@
             <BoxView HeightRequest="1"
                      Color="Gray"/>
 
+            <Label TextColor="Red"
+                   x:Name="IsEmptyLabel"
+                   FontSize="Large"
+                   IsVisible="False"/>
+
             <ListView x:Name="timetableListView"
                       ItemSelected="timetableListView_ItemSelected">
                 <ListView.ItemTemplate>

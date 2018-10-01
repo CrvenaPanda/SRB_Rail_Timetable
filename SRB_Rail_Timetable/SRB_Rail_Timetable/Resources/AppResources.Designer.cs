@@ -88,6 +88,15 @@ namespace SRB_Rail_Timetable.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Contact the developer.
+        /// </summary>
+        internal static string Contact {
+            get {
+                return ResourceManager.GetString("Contact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to COUSHETE.
         /// </summary>
         internal static string Coushete {
@@ -111,6 +120,15 @@ namespace SRB_Rail_Timetable.Resources {
         internal static string Departure {
             get {
                 return ResourceManager.GetString("Departure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This is the description of this application. My name is test. This is a test. Goodbye..
+        /// </summary>
+        internal static string Description {
+            get {
+                return ResourceManager.GetString("Description", resourceCulture);
             }
         }
         
@@ -187,6 +205,33 @@ namespace SRB_Rail_Timetable.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Made by: DukeCSharp.
+        /// </summary>
+        internal static string MadeBy {
+            get {
+                return ResourceManager.GetString("MadeBy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No entries were found..
+        /// </summary>
+        internal static string NoEntries {
+            get {
+                return ResourceManager.GetString("NoEntries", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please enable internet connection..
+        /// </summary>
+        internal static string NoInternet {
+            get {
+                return ResourceManager.GetString("NoInternet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to OBLIGATORY RESERVATION.
         /// </summary>
         internal static string ObligatoryReservation {
@@ -210,6 +255,15 @@ namespace SRB_Rail_Timetable.Resources {
         internal static string RegioVoz {
             get {
                 return ResourceManager.GetString("RegioVoz", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Search.
+        /// </summary>
+        internal static string Search {
+            get {
+                return ResourceManager.GetString("Search", resourceCulture);
             }
         }
         
@@ -282,6 +336,15 @@ namespace SRB_Rail_Timetable.Resources {
         internal static string Travels {
             get {
                 return ResourceManager.GetString("Travels", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to version: 1.0.0.
+        /// </summary>
+        internal static string Version {
+            get {
+                return ResourceManager.GetString("Version", resourceCulture);
             }
         }
     }

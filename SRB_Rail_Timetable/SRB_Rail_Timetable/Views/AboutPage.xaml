@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:i18n="clr-namespace:SRB_Rail_Timetable.Logic"
+             x:Class="SRB_Rail_Timetable.Views.AboutPage"
+             Title="Info">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout Padding="15">
+            
+            <!-- App Name -->
+            <Label Text="SRB Rail"
+                   FontSize="Large"/>
+            
+            <!-- Icon -->
+            <Image Source="icon.png"/>
+            
+            <!-- Short Description -->
+            <Label Text="{i18n:Translate Description}"/>
+            
+            <!-- Line -->
+            <BoxView HeightRequest="1"
+                     Color="Gray"/>
+            
+            <!-- Version -->
+            <Label Text="{i18n:Translate Version}"/>
+            
+            <!-- Contact the developer-->
+            <StackLayout Orientation="Horizontal"
+                         Spacing="12">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="MailDeveloper_Tapped" />
+                </StackLayout.GestureRecognizers>
+
+                <Image Source="IconEmail.png"
+                       HeightRequest="45"/>
+
+                <Label Text="{i18n:Translate Contact}"
+                       HorizontalOptions="Start"
+                       VerticalOptions="CenterAndExpand"/>
+                
+            </StackLayout>
+
+            <!-- Line -->
+            <BoxView HeightRequest="1"
+                     Color="Gray"/>
+
+            <!-- Owner -->
+            <Label Text="{i18n:Translate MadeBy}"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

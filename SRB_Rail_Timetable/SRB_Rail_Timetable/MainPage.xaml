@@ -8,7 +8,10 @@
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="ENG"
+                     x:Name="langToolbarItem"
                      Clicked="ChangeLanguage_Clicked"/>
+        <ToolbarItem Text="About"
+                     Clicked="About_Clicked"/>
     </ContentPage.ToolbarItems>
     
     <StackLayout BackgroundColor="{StaticResource backgroundColor}">
@@ -23,7 +26,7 @@
                             <ColumnDefinition Width=".2*"/>
                             <ColumnDefinition Width=".8*"/>
                         </Grid.ColumnDefinitions>
-                        
+
                         <Label Text="{i18n:Translate From}"
                                x:Name="fromLabelName"
                                FontSize="Medium"/>
@@ -43,7 +46,7 @@
                             FontSize="Large"
                             Clicked="ReverseButton_Clicked"/>
                 </ViewCell>
-                
+
                 <!-- To Cell -->
                 <ViewCell Tapped="ToEntry_Tapped">
                     <Grid Padding="15,15,10,15">
@@ -102,11 +105,11 @@
                                VerticalOptions="CenterAndExpand"/>
 
                         <TimePicker x:Name="timePicker"
-                                    Time="5:00"
+                                    Time="4:00"
                                     Grid.Column="1"
                                     HorizontalOptions="StartAndExpand"/>
                     </Grid>
-                    
+
                 </ViewCell>
 
             </TableSection>

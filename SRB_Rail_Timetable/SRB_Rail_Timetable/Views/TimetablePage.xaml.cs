@@ -1,4 +1,5 @@
 ﻿using Rg.Plugins.Popup.Services;
+using SRB_Rail_Timetable.Logic;
 using SRB_Rail_Timetable.Models;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,14 @@ namespace SRB_Rail_Timetable.Views
 		{
 			InitializeComponent ();
 
+            // Check if there is no entries
+            if (items == null || items.Count == 0)
+            {
+                IsEmptyLabel.Text = new TranslateExtension { Text = "NoEntries" }.ProvideValue() as string;
+                IsEmptyLabel.IsVisible = true;
+            }
+
+            // Set details
             Title = title;
             timetableListView.ItemsSource = items;
 		}

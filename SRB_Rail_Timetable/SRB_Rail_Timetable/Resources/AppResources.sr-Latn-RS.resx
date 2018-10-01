@@ -126,6 +126,9 @@
   <data name="ClickTo" xml:space="preserve">
     <value>Klikni da izabereš...</value>
   </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Kontaktiraj me</value>
+  </data>
   <data name="Coushete" xml:space="preserve">
     <value>KUŠET</value>
   </data>
@@ -134,6 +137,9 @@
   </data>
   <data name="Departure" xml:space="preserve">
     <value>Polazak</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Ovo je opis aplikacije. Moje ime je test. Ovo je test. Dovidjenja.</value>
   </data>
   <data name="EnterStation" xml:space="preserve">
     <value>Unesi stanicu...</value>
@@ -159,6 +165,15 @@
   <data name="LocalTrain" xml:space="preserve">
     <value>LOKALNI</value>
   </data>
+  <data name="MadeBy" xml:space="preserve">
+    <value>Napravio: DukeCSharp</value>
+  </data>
+  <data name="NoEntries" xml:space="preserve">
+    <value>Nisu pronađeni rezultati na ovoj relaciji.</value>
+  </data>
+  <data name="NoInternet" xml:space="preserve">
+    <value>Uključite internet.</value>
+  </data>
   <data name="ObligatoryReservation" xml:space="preserve">
     <value>OBAVEZNA REZERVACIJA</value>
   </data>
@@ -175,7 +190,7 @@
     <value>DRUGA KLASA</value>
   </data>
   <data name="SelectDiffStations" xml:space="preserve">
-    <value>Početna i krajna statinica mora biti različita.</value>
+    <value>Početna i krajna statinica moraju biti različite.</value>
   </data>
   <data name="SelectStations" xml:space="preserve">
     <value>Izaberite stanice.</value>
@@ -194,5 +209,8 @@
   </data>
   <data name="Travels" xml:space="preserve">
     <value>Putuje:</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>verzija: 1.0.0</value>
   </data>
 </root>

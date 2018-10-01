@@ -54,7 +54,7 @@ namespace SRB_Rail_Timetable.Logic
             var className = "tabela";
             var timetable = new List<TimetableEntry>();
 
-            // Load Page // TODO: check validity of url
+            // Load Page
             try
             {
                 HtmlWeb web = new HtmlWeb();
@@ -108,9 +108,9 @@ namespace SRB_Rail_Timetable.Logic
                         note));
                 }
             }
-            catch (Exception e)
+            catch
             {
-                Debug.WriteLine(e.GetType().ToString());
+                // Exceptions will be handled in other parts of code
             }
 
             return timetable;

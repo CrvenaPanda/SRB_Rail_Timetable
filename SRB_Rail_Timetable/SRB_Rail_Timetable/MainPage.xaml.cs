@@ -5,13 +5,9 @@ using SRB_Rail_Timetable.Models;
 using SRB_Rail_Timetable.Resources;
 using SRB_Rail_Timetable.Views;
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
+using Plugin.Connectivity;
 
 namespace SRB_Rail_Timetable
 {
@@ -22,6 +18,12 @@ namespace SRB_Rail_Timetable
         public MainPage()
 		{
 			InitializeComponent();
+
+            // Change language
+            if (App.IsSerbian)
+            {
+                langToolbarItem.Text = "SRB";
+            }
 		}
 
         #endregion
@@ -31,6 +33,14 @@ namespace SRB_Rail_Timetable
         // Search Button Clicked
         void Search_Clicked(object sender, EventArgs e)
         {
+            // Check internet connection
+            if (!CrossConnectivity.Current.IsConnected)
+            {
+                var messsage = new TranslateExtension { Text = "NoInternet" }.ProvideValue() as string;
+                DisplayAlert("", messsage, "OK");
+                return;
+            }
+
             // Validate Data
             if (!Validate())
             {
@@ -87,7 +97,7 @@ namespace SRB_Rail_Timetable
         /// Validates data.
         /// </summary>
         /// <returns>Was validation successful</returns>
-        bool Validate() // FIXME: there is a bug somewhere when using different languages
+        bool Validate()
         {
             // Check if user set starting and ending stations
             var placeholder = new TranslateExtension { Text = "ClickTo" }.ProvideValue() as string;
@@ -142,28 +152,32 @@ namespace SRB_Rail_Timetable
 
         #endregion
 
-        #region Toolbar
+        #region Toolbar Events
 
         void ChangeLanguage_Clicked(object sender, EventArgs e)
         {
             var item = sender as ToolbarItem;
 
             // Change culture info
-            if (CrossMultilingual.Current.CurrentCultureInfo.Name == "sr-Latn-RS")
+            if (CrossMultilingual.Current.CurrentCultureInfo.Name == App.Serbian_Language)
             {
-                CrossMultilingual.Current.CurrentCultureInfo = new CultureInfo("en");
-                AppResources.Culture = CrossMultilingual.Current.CurrentCultureInfo;
+                App.IsSerbian = false; // this property will save data
                 item.Text = "ENG";
             }
             else
             {
-                CrossMultilingual.Current.CurrentCultureInfo = new CultureInfo("sr-Latn-RS");
-                AppResources.Culture = CrossMultilingual.Current.CurrentCultureInfo;
+                App.IsSerbian = true;
                 item.Text = "SRB";
             }
 
             // Update views language
             UpdateViewsLanguage();
+        }
+
+        void About_Clicked(object sender, EventArgs e)
+        {
+            // Open About page
+            Navigation.PushAsync(new AboutPage());
         }
 
         #endregion

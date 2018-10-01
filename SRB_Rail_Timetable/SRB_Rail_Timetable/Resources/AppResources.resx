@@ -126,6 +126,9 @@
   <data name="ClickTo" xml:space="preserve">
     <value>Click to choose...</value>
   </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Contact the developer</value>
+  </data>
   <data name="Coushete" xml:space="preserve">
     <value>COUSHETE</value>
   </data>
@@ -134,6 +137,9 @@
   </data>
   <data name="Departure" xml:space="preserve">
     <value>Departure</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>This is the description of this application. My name is test. This is a test. Goodbye.</value>
   </data>
   <data name="EnterStation" xml:space="preserve">
     <value>Enter station...</value>
@@ -158,6 +164,15 @@
   </data>
   <data name="LocalTrain" xml:space="preserve">
     <value>LOCAL</value>
+  </data>
+  <data name="MadeBy" xml:space="preserve">
+    <value>Made by: DukeCSharp</value>
+  </data>
+  <data name="NoEntries" xml:space="preserve">
+    <value>No entries were found.</value>
+  </data>
+  <data name="NoInternet" xml:space="preserve">
+    <value>Please enable internet connection.</value>
   </data>
   <data name="ObligatoryReservation" xml:space="preserve">
     <value>OBLIGATORY RESERVATION</value>
@@ -194,5 +209,8 @@
   </data>
   <data name="Travels" xml:space="preserve">
     <value>Travels</value>
+  </data>
+  <data name="Version" xml:space="preserve">
+    <value>version: 1.0.0</value>
   </data>
 </root>

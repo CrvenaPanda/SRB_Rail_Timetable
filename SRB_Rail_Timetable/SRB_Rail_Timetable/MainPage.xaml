@@ -2,7 +2,6 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:i18n="clr-namespace:SRB_Rail_Timetable.Logic"
-             xmlns:local="clr-namespace:SRB_Rail_Timetable"
              x:Class="SRB_Rail_Timetable.MainPage"
              Title="SRB Rail Timetable">
 
@@ -11,6 +10,7 @@
                      x:Name="langToolbarItem"
                      Clicked="ChangeLanguage_Clicked"/>
         <ToolbarItem Text="About"
+                     Icon="InfoIcon.png"
                      Clicked="About_Clicked"/>
     </ContentPage.ToolbarItems>
     

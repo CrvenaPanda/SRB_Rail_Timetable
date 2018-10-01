@@ -28,7 +28,6 @@ namespace SRB_Rail_Timetable.Views
             titleLabel.Text = destinationTitle;
             SetEntryData(entry);
             AddTarrifesLabels(entry.Tarrifes);
-            SetNote(entry.Note);
 		}
 
         #endregion
@@ -125,15 +124,17 @@ namespace SRB_Rail_Timetable.Views
             return type + " " + trainEntry.TrainNumber;
         }
 
+        #endregion
+
+
+        #region Clicked Events
+
         /// <summary>
-        /// Set 'note' about entry if there is one.
+        /// Closes the page.
         /// </summary>
-        void SetNote(string note)
+        void Close_Clicked(object sender, EventArgs e)
         {
-            if (note.Length > 0)
-            {
-                noteLabel.Text = "* " + note;
-            }
+            PopupNavigation.Instance.PopAsync();
         }
 
         #endregion

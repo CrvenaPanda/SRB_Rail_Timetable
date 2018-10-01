@@ -88,6 +88,15 @@ namespace SRB_Rail_Timetable.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Close.
+        /// </summary>
+        internal static string Close {
+            get {
+                return ResourceManager.GetString("Close", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Contact the developer.
         /// </summary>
         internal static string Contact {

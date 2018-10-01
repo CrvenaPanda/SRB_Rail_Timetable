@@ -28,8 +28,6 @@ namespace SRB_Rail_Timetable.Models
 
         public Tarrifes Tarrifes { get; private set; }
 
-        public string Note { get; private set; }
-
         public TimetableEntry(
             string trainNumber,
             DateTime date,
@@ -38,8 +36,7 @@ namespace SRB_Rail_Timetable.Models
             string late,
             string travelTime,
             string trainType,
-            List<string> tarrifes,
-            string note)
+            List<string> tarrifes)
         {
             // Train Number
             TrainNumber = trainNumber;
@@ -58,11 +55,6 @@ namespace SRB_Rail_Timetable.Models
             // Train Type and Tarrife
             Type = TimetableEntryHelper.GetTrainType(trainType);
             Tarrifes = TimetableEntryHelper.GetTarrifes(tarrifes);
-
-            // Note
-            Note = note;
         }
-
-        
     }
 }

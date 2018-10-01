@@ -66,7 +66,7 @@
                 </StackLayout>
 
                 <!-- Tarrifes -->
-                
+
                 <Frame BorderColor="Gray"
                        Padding="50,10,30,10"
                        Margin="30,0,30,0">
@@ -74,16 +74,15 @@
 
                         <Label Text="{i18n:Translate Tarrifes}"
                            TextColor="Black"/>
-                    
-                </StackLayout>
-                </Frame>
 
-                <!-- Note -->
+                    </StackLayout>
+                </Frame>
                 
-                <Label LineBreakMode="WordWrap"
-                       Margin="10,7,10,0"
-                       x:Name="noteLabel"
-                       TextColor="{StaticResource invalidTextColor}"/>
+                <!-- Close Button -->
+                <Button Text="{i18n:Translate Close}"
+                        Clicked="Close_Clicked"
+                        BackgroundColor="DeepSkyBlue"
+                        Margin="0,15,0,0"/>
 
             </StackLayout>
         </ScrollView>

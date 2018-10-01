@@ -126,6 +126,9 @@
   <data name="ClickTo" xml:space="preserve">
     <value>Klikni da izabereš...</value>
   </data>
+  <data name="Close" xml:space="preserve">
+    <value>Zatvori</value>
+  </data>
   <data name="Contact" xml:space="preserve">
     <value>Kontaktiraj me</value>
   </data>

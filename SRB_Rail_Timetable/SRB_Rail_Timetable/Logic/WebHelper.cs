@@ -93,8 +93,6 @@ namespace SRB_Rail_Timetable.Logic
                         }
                     }
 
-                    string note = columns[NoteColIndex].InnerText.Trim();
-
                     // Add data to list
                     timetable.Add(new TimetableEntry(
                         trainNumber,
@@ -104,8 +102,7 @@ namespace SRB_Rail_Timetable.Logic
                         late,
                         travelTime,
                         trainType,
-                        tarrifes,
-                        note));
+                        tarrifes));
                 }
             }
             catch
@@ -114,7 +111,6 @@ namespace SRB_Rail_Timetable.Logic
             }
 
             return timetable;
-            
         }
 
         #endregion
